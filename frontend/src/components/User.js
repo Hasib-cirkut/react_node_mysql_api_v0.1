@@ -1,31 +1,31 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 
 
-const User = () =>{
-    const [user, setuser] = useState([])
+const User = ({ match }) =>{
+    const [user, setUser] = useState([])
 
-    const fetchAllUser = async () =>{
-        let result = await fetch('http://localhost:5000/api/users')
-
-        result = await result.json()
-
-        setuser(result)
-    }
+    useEffect(() => {
+        fetchUser()
+    }, [])
 
     const fetchUser = async () =>{
-        let result = await fetch('http://localhost:5000/api/users')
-    }
+        let id = match.params.userid
+        let user = await fetch(`http://localhost:5000/api/users/${id}`)
+        user = await user.json()
 
+        setUser(user)
+        
+    }
 
     return(
         <div>
-            <button onClick={fetchAllUser}>All User</button>
-
             {
-                user.map(item =>(
-                    <div key={item.index}>
-                    <h5 onClick={fetchUser}>{item.firstname}</h5>
+                user.map(item=>(
+                    <div key = {item.uKey}>
+                        <h4>{item.firstname}</h4>
+                        <h4>{item.lastname}</h4>
+                        <h4>{item.home}</h4>
                     </div>
                 ))
             }

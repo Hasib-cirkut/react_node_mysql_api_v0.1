@@ -22,6 +22,18 @@ router.get('/api/users', (req, res)=>{
     })
 })
 
+router.get('/api/users/:id', (req, res)=>{
+    let id = req.params.id
+    
+    pool.query(`select * from user where uKey = ?`,[id], (error, result)=>{
+        if(error)
+        console.log(error);
+        else{
+            res.send(result)
+        }
+    })
+})
+
 
 
 module.exports = router
