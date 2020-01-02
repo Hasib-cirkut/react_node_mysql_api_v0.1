@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
-import Users from './components/Users'
-import User from './components/User'
+import Home from './components/Home'
+import Blogs from './components/Blogs'
+import AddBlog from './components/AddBlog'
+import Nav from './components/NavBar'
 
 import {
   BrowserRouter as Router,
@@ -13,14 +15,17 @@ import {
 function App() {
   return (
     <div className="App">
+
+      
+      
       <Router>
 
-        <Switch>
-          <Route exact path="/" component={Users}>
-            <Users></Users>
-          </Route>
+      <Nav></Nav>
 
-          <Route exact path ="/:userid" component={User}></Route>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/blogs" component={Blogs} />
+          <Route exact path="/addBlog" component={AddBlog} />
         </Switch>
 
       </Router>
