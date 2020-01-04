@@ -21,8 +21,6 @@ const Home = () => {
                 <Link to={'/addBlog'}><Button variant="primary">Confess Something!</Button></Link>
                 </p>
             </Jumbotron>
-
-           
         </div>
     );
 }

@@ -55,6 +55,43 @@ router.post('/blogs/addBlog', (req, res)=>{
     pool.query(q, [username, title, body], (error, result)=>{
         if(error)
             console.log(error);
+        else{
+            res.send({result: 'Success'})
+        }
+    })
+})
+
+router.post('/api/users/password', (req, res)=>{
+    let username = req.body.username
+    let password = req.body.password
+    
+
+    let q = `SELECT password from users where username=?`
+
+    pool.query(q, [username], (error, result)=>{
+        if(error)
+            console.log(error);
+        else{
+
+            
+
+            if(result.length === 0){
+                
+                res.send({result: 'userNotFound'})
+            }else{
+
+                
+                let dbPassword = result[0].password
+
+                if(dbPassword === password){
+                    
+                    res.send( {result: 'matched'})
+                
+                }else{
+                    res.send({result: 'notMatched'})
+                }
+            }
+        }
     })
 })
 
