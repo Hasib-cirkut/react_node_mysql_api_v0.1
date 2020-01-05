@@ -13,11 +13,11 @@ const NavBar = () => {
                     <Nav className="mr-auto">
                         <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="/blogs">Blogs</Nav.Link>
-                        {isLoggedIn === true &&
+                        {window.localStorage.length === 1 &&
                         <Nav.Link href="/logout">Logout</Nav.Link>
                         }
 
-                        {isLoggedIn === false &&
+                        {window.localStorage.length === 0 &&
                         <Nav.Link href="/login">Login</Nav.Link>
                         }
                     </Nav>

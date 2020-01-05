@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Form, Button} from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
-import {Redirect} from 'react-router-dom'
+import {Redirect, Link} from 'react-router-dom'
 import {isLoggedIn} from './Auth'
 
 const LoginPage = () => {
@@ -46,53 +46,60 @@ const LoginPage = () => {
     }
 
     if(isLoggedIn){
-        return(<Redirect to={"/home"} />)
+        return(<Redirect to={"/"} />)
     }
 
     else if(passMatched === 'matched'){
-        return(<Redirect to={"/home"} />)
+        return(<Redirect to={"/"} />)
     }else{
         return (
-            <div>
-                <Form onSubmit={handleSubmit(onSubmit)}>
-                    <Form.Group>
-                        <Form.Label>Username</Form.Label>
-                        <Form.Control type="text" name="username" placeholder="Enter username" ref={register({ required: true })} />
-                        { usernameFound === 'notFound' &&
 
-                            <React.Fragment>
+            <div className="flex-container">
 
-                                <Form.Text className="text-muted">
-                                    username not found in our database. don't worry, we will fire our database admin :p
-                                </Form.Text>
+            <div id="loginBody">
+                <form id="loginForm" onSubmit={handleSubmit(onSubmit)}>
+                    <span id="loginSpan">username</span><br />
+                    <input id="formInput" name="username"  ref={register({ required: true })}/><br /><br /><br />
 
-                            </React.Fragment>
+                    { usernameFound === 'notFound' &&
 
-                        }
-                    </Form.Group>
+                    <React.Fragment>
+
+                        <text id="usernameNotFoundText">
+                            username not found in our database
+                        </text>
+
+                    </React.Fragment>
+
+                    }
     
-                    <Form.Group controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" name = "password" placeholder="Password" ref={register({ required: true })} />
+                    <span id="loginSpan2">password</span><br />
+                    <input type="password" id="formInput2" name = "password" ref={register({ required: true })} /><br /><br /><br />
 
-                        { passMatched === 'notMatched' &&
+                    { passMatched === 'notMatched' &&
 
-                            <React.Fragment>
+                    <React.Fragment>
 
-                                <Form.Text className="text-muted">
-                                    Password didn't matched. Next time register with easier passwords :p
-                                </Form.Text>
+                        <text id="passDidntMatchText">
+                            Password didn't match
+                        </text>
 
-                            </React.Fragment>
+                    </React.Fragment>
 
-                        }
-                    </Form.Group>
+                    }
     
-                    <Button variant="primary" type="submit">
-                        Submit
-                    </Button>
-                </Form>
+                    <span id="accountText">Don't have an account ?</span><br />
+                    
+    
+                    <Link to={"/register"} id="signupText">SIGN UP TODAY</Link><br />
+    
+                    <input type="submit" id="submitButton" />
+                </form>
             </div>
+    
+            </div>
+
+
         )
     }
 }

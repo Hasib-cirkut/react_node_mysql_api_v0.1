@@ -16,17 +16,21 @@ import {
   Link
 } from "react-router-dom";
 
+
+import Register from './components/Register';
+import tempLogin from './components/tempLogin'
+
 function App() {
 
   return (
     
     <div className="App">
 
-
+      <Nav></Nav>
       
       <Router>
 
-      <Nav></Nav>
+      
 
         <Switch>
           <Route exact path="/" component={Home} />
@@ -34,6 +38,8 @@ function App() {
           <Route exact path="/addBlog" component={AddBlog} />
           <Route exact path="/login" component={LoginPage} />
           <Route exact path="/logout" component={Logout} />
+          <Route exact path="/register" component={Register} />
+
         </Switch>
 
       </Router>

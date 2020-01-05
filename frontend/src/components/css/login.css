@@ -1,0 +1,132 @@
+#loginBody{
+    position: absolute;
+    width: 700px;
+    height: 360px;
+
+    background: #F4F4F4;
+    border: 1px solid #1200E3;
+    
+    margin-top: 150px;
+}
+
+#formInput{
+    position: absolute;
+    width: 204px;
+    height: 39px;
+    left: 44px;
+    top: 62px;
+    background: #CCC9C9;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+#formInput2{
+    position: absolute;
+    width: 204px;
+    height: 39px;
+    left: 44px;
+    top: 182px;
+    background: #CCC9C9;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+#loginSpan{
+    position: absolute;
+    width: 81px;
+    height: 21px;
+    left: 39px;
+    top: 35px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #756A6A;
+}
+
+#loginSpan2{
+    position: absolute;
+    width: 81px;
+    height: 21px;
+    left: 39px;
+    top: 155px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #756A6A;
+}
+
+#submitButton{
+    position: absolute;
+    width: 100px;
+    height: 33px;
+    left: 95px;
+    top: 269px;
+    background: #45be6e;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+#accountText{
+    position: absolute;
+    width: 191px;
+    height: 21px;
+    top: 70px;
+    left: 400px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 21px;
+    color: #C06E6E;
+}
+
+#signupText{
+    position: absolute;
+    width: 139px;
+    height: 21px;
+    top: 190px;
+    left: 420px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    text-decoration: none;
+    color: #4B4646;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#usernameNotFoundText{
+    position: absolute;
+    width: 228px;
+    height: 16px;
+    top: 105px;
+    left: 34px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #C60000;
+}
+
+#passDidntMatchText{
+    position: absolute;
+    width: 228px;
+    height: 16px;
+    top: 222px;
+    left: 30px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #C60000;
+}

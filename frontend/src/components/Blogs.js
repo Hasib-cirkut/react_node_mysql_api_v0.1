@@ -24,7 +24,6 @@ const Blogs = () => {
 
     return (
         <div>
-            <AddBlog />
             {
                 blogs.map(item => (
                     <div key={item.uKey}>
