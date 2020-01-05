@@ -19,6 +19,7 @@ import {
 
 import Register from './components/Register';
 import tempLogin from './components/tempLogin'
+import TempNav from './components/tempNav';
 
 function App() {
 
@@ -26,7 +27,7 @@ function App() {
     
     <div className="App">
 
-      <Nav></Nav>
+      
       
       <Router>
 
@@ -39,6 +40,7 @@ function App() {
           <Route exact path="/login" component={LoginPage} />
           <Route exact path="/logout" component={Logout} />
           <Route exact path="/register" component={Register} />
+          <Route exact path="/tempNav" component={TempNav} />
 
         </Switch>
 

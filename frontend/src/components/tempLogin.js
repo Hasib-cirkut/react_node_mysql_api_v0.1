@@ -3,7 +3,7 @@ import './css/login.css'
 import {Link} from 'react-router-dom'
 
 
-const tempLogin = () => {
+const TempLogin = () => {
     return (
         <div className="flex-container">
 
@@ -28,4 +28,4 @@ const tempLogin = () => {
     );
 }
 
-export default tempLogin;
+export default TempLogin;

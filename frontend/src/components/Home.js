@@ -4,10 +4,12 @@ import Button from 'react-bootstrap/Button'
 import {Link} from 'react-router-dom'
 import Nav from './NavBar'
 import AddBlog from './AddBlog';
+import TempNav from './tempNav'
 
 const Home = () => {
     return (
         <div>
+            <TempNav></TempNav>
             <Jumbotron>
                 <h1>Hello, Blogs!</h1>
                 <p>
