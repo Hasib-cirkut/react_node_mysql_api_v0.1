@@ -2,14 +2,12 @@ import React from 'react';
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Button from 'react-bootstrap/Button'
 import {Link} from 'react-router-dom'
-import Nav from './NavBar'
-import AddBlog from './AddBlog';
-import TempNav from './tempNav'
+import Navbar from './NavBar'
 
 const Home = () => {
     return (
         <div>
-            <TempNav></TempNav>
+            <Navbar />
             <Jumbotron>
                 <h1>Hello, Blogs!</h1>
                 <p>

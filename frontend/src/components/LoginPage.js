@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
-import {Form, Button} from 'react-bootstrap'
 import { useForm } from 'react-hook-form'
 import {Redirect, Link} from 'react-router-dom'
 import {isLoggedIn} from './Auth'
+
+import Navbar from './NavBar'
+
+import './css/login.css'
 
 const LoginPage = () => {
 
@@ -54,7 +57,12 @@ const LoginPage = () => {
     }else{
         return (
 
+            <div>
+                <Navbar />   
+            
+
             <div className="flex-container">
+
 
             <div id="loginBody">
                 <form id="loginForm" onSubmit={handleSubmit(onSubmit)}>
@@ -97,6 +105,7 @@ const LoginPage = () => {
                 </form>
             </div>
     
+            </div>
             </div>
 
 

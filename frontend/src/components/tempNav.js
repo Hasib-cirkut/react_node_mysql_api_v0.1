@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import './css/navbar.css'
 import {Link} from 'react-router-dom'
 
 
@@ -21,15 +20,13 @@ const TempNav = () => {
 
     const loggedIn = () =>{
         if(window.localStorage.length === 1){
-            console.log('true');
             setloggedin(true)
         }else{
             setloggedin(false)
-            console.log('false');
         }
     }
     return (
-        <div>
+        <div className="flex-container">
             <div id="navbody">
                 <Link id="homeLink" className="navLink" to={"/"}>Home</Link>
 

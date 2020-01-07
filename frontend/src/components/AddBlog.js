@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { useForm } from 'react-hook-form'
 import {Form, Button} from 'react-bootstrap'
 import {Redirect} from 'react-router-dom'
-import {isLoggedIn} from './Auth'
+import Navbar from './NavBar'
 
 export default function AddBlog() {
     const { register, handleSubmit, watch, errors } = useForm()
@@ -27,10 +27,12 @@ export default function AddBlog() {
             setRedirect(true)
     }
 
-    console.log(isLoggedIn);
+    //console.log('Local Storage Length: ', window.localStorage.length);
     
 
-    if(isLoggedIn === false){
+    if(window.localStorage.length < 1){
+        console.log('here');
+        
         return(<Redirect to={"/login"} />)
     }
 
@@ -39,23 +41,26 @@ export default function AddBlog() {
     }else{
         return (
 
-            <div style={{padding: "50px"}}>
-                <Form onSubmit={handleSubmit(onSubmit)}>
-                
-                <Form.Label>username</Form.Label>
-                <Form.Control type="text" name="username" placeholder="username" rows="3" ref={register({ required: true })} />
-        
-                <Form.Label>Title</Form.Label>
-                <Form.Control type="text" name="title" placeholder="Title" rows="3" ref={register({ required: true })} />
-                
-                <Form.Group controlId="exampleForm.ControlTextarea1">
-                    <Form.Label>Blog Body</Form.Label>
-                    <Form.Control as="textarea" name="body" rows="3" ref={register({ required: true })} />
-                </Form.Group>
-        
-                <Button type="submit">ADD</Button>
-            </Form>
-            </div>
+            <React.Fragment>
+                <Navbar></Navbar>
+                <div style={{padding: "50px"}}>
+                    <Form onSubmit={handleSubmit(onSubmit)}>
+                    
+                    <Form.Label>username</Form.Label>
+                    <Form.Control type="text" name="username" placeholder="username" rows="3" ref={register({ required: true })} />
+            
+                    <Form.Label>Title</Form.Label>
+                    <Form.Control type="text" name="title" placeholder="Title" rows="3" ref={register({ required: true })} />
+                    
+                    <Form.Group controlId="exampleForm.ControlTextarea1">
+                        <Form.Label>Blog Body</Form.Label>
+                        <Form.Control as="textarea" name="body" rows="3" ref={register({ required: true })} />
+                    </Form.Group>
+            
+                    <Button type="submit">ADD</Button>
+                </Form>
+                </div>
+            </React.Fragment>
         )
     }
 }

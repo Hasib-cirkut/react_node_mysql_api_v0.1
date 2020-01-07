@@ -1,9 +1,27 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {Nav, Form, FormControl, Navbar, Button} from 'react-bootstrap'
-import Link from 'react-router-dom/Link'
-import {isLoggedIn} from './Auth'
 
 const NavBar = () => {
+
+
+    const [loggedin, setloggedin] = useState(null)
+
+    useEffect(() => {
+        
+        loggedIn()
+        
+    }, [])
+
+    const loggedIn = () =>{
+        if(window.localStorage.length === 1){
+            setloggedin(true)
+            
+        }else{
+            setloggedin(false)
+        }
+    }
+
+
     return (
         <div>
             <Navbar bg="light" expand="lg">
@@ -13,11 +31,11 @@ const NavBar = () => {
                     <Nav className="mr-auto">
                         <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="/blogs">Blogs</Nav.Link>
-                        {window.localStorage.length === 1 &&
+                        {loggedin === true &&
                         <Nav.Link href="/logout">Logout</Nav.Link>
                         }
 
-                        {window.localStorage.length === 0 &&
+                        {loggedin === false &&
                         <Nav.Link href="/login">Login</Nav.Link>
                         }
                     </Nav>

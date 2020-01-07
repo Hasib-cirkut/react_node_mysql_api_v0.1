@@ -11,8 +11,23 @@ router.get('/', (req, res)=>{
     res.send("Hello")
 })
 
+
+//get all blogs
 router.get('/api/blogs', (req, res)=>{
     pool.query('select * from blogs', (error, result, fields)=>{
+        if(error)
+            console.log(error);
+        else{
+            res.send(result)
+        }
+    })
+})
+
+//get blogs by genre
+router.get('/api/blogs/:id', (req, res)=>{
+
+    
+    pool.query('select * from blogs where genre = ?', [req.params.id], (error, result, fields)=>{
         if(error)
             console.log(error);
         else{

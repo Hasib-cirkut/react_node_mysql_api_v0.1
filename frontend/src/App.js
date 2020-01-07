@@ -3,23 +3,21 @@ import './App.css';
 import Home from './components/Home'
 import Blogs from './components/Blogs'
 import AddBlog from './components/AddBlog'
-import Nav from './components/NavBar'
+
 import LoginPage from './components/LoginPage'
 import Logout from './components/Logout'
-import {isLoggedIn} from './components/Auth'
+
 
 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 
 import Register from './components/Register';
-import tempLogin from './components/tempLogin'
-import TempNav from './components/tempNav';
+import TempNav from './components/TempNav';
 
 function App() {
 

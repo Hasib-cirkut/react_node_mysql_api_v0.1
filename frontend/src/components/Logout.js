@@ -7,7 +7,7 @@ const Logout = () => {
     localStorage.removeItem('user')
 
     return(
-        <Redirect to="/" />
+        <Redirect to="/"/>
     )
 
 }
