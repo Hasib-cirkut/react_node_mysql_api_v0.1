@@ -1,0 +1,56 @@
+#addBlogMain{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 674px;
+    height: 554px;
+    background: #F3F3F3;
+    margin-left: 600px;
+    margin-top: 131px;
+    border-radius: 5px
+}
+
+#dropdown-basic-button{
+    top: 20px;
+    left: 10px;
+
+    background: #ECECEC;
+/* Gray 3 */
+
+border: 1px solid #828282;
+}
+
+#title{
+        position: absolute;
+    top: 40px;
+    left: 50px;
+    background: #ECECEC;
+    border: 1px solid #828282;
+    height: 36px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+#body{
+    position: absolute;
+    top: 140px;
+    left: 50px;
+    height: 350px;
+    width: 570px;
+
+    background: #ECECEC;
+/* Gray 3 */
+
+border: 1px solid #828282;
+}
+
+#addBlogButton{
+    position: absolute;
+    width: 88px;
+    height: 35px;
+
+    background: #093C6B;
+    border-radius: 5px;
+    top: 504px;
+    left: 290px;
+}

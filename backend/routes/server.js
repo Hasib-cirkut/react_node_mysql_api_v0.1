@@ -61,13 +61,14 @@ router.get('/api/users/:id', (req, res)=>{
 })
 
 router.post('/blogs/addBlog', (req, res)=>{
-    let username = req.body.username
+    let username = req.body.author
     let title = req.body.title
     let body = req.body.body
+    let genre = req.body.genre
 
-    let q = `INSERT INTO blogs values('', ?, ?, ?)`
+    let q = `INSERT INTO blogs values('', ?, ?, ?, ?)`
 
-    pool.query(q, [username, title, body], (error, result)=>{
+    pool.query(q, [username, title, body, genre], (error, result)=>{
         if(error)
             console.log(error);
         else{
