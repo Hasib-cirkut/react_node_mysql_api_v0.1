@@ -60,6 +60,35 @@ router.get('/api/users/:id', (req, res)=>{
     })
 })
 
+router.get('/api/users/email/:id', (req, res)=>{
+    let email = req.params.id
+    
+    pool.query(`select * from users where email = ?`,[email], (error, result)=>{
+        if(error)
+        console.log(error);
+        else{
+            res.send(result)
+        }
+    })
+})
+
+router.post('/api/users/register', (req, res)=>{
+
+    let {username, firstname, lastname, password, email} = req.body;
+
+    
+
+    let q = `INSERT INTO users values(?, ?, ?, ?, ?)`
+
+    pool.query(q, [username, email, password, firstname, lastname], (error, result)=>{
+        if(error)
+            console.log(error);
+        else{
+            res.send({result: 'Success'})
+        }
+    })
+})
+
 router.post('/blogs/addBlog', (req, res)=>{
     let username = req.body.author
     let title = req.body.title
@@ -92,7 +121,6 @@ router.post('/api/users/password', (req, res)=>{
             
 
             if(result.length === 0){
-                
                 res.send({result: 'userNotFound'})
             }else{
 

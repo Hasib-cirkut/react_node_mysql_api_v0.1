@@ -39,6 +39,8 @@ export default function AddBlog() {
     }
 
     const handleDropDown = (event) =>{
+        console.log(event.target.value);
+        
         setGenre(event.target.value)
     }
 
