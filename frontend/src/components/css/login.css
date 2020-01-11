@@ -1,3 +1,5 @@
+
+
 #loginBody{
     position: absolute;
     width: 700px;
@@ -129,4 +131,19 @@
     font-size: 14px;
     line-height: 16px;
     color: #C60000;
+}
+
+
+#logintext{
+    position: absolute;
+    width: 228px;
+    height: 16px;
+    top: -28px;
+    left: 230px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 16px;
+    color: #4997ee;
 }

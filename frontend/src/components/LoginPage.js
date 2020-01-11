@@ -103,6 +103,8 @@ const LoginPage = () => {
     
                     <input type="submit" id="submitButton" />
                 </form>
+
+                <div id="logintext"><p>LOGIN</p></div>
             </div>
     
             </div>
