@@ -4,11 +4,13 @@ import Button from 'react-bootstrap/Button'
 import {Link} from 'react-router-dom'
 import Navbar from './NavBar'
 
+import './css/home.css'
+
 const Home = () => {
     return (
         <div>
             <Navbar />
-            <Jumbotron>
+            <Jumbotron id="jumbotron">
                 <h1>Hello, Blogs!</h1>
                 <p>
                     This is a site where you can anonymously post blogs about eveyryday things :D
