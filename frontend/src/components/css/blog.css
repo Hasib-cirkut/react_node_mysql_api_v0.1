@@ -19,6 +19,9 @@
     padding: 5vw 15vw 5vw 15vw;
     font-family: Roboto;
     text-align: center;
+
+    font-size: x-large;
+    font-weight: 350;
     
 }
 
@@ -28,6 +31,7 @@
     flex-direction: row;
     margin-left: 15vw;
     margin-top: 10vw;
+    font-family: monospace;
 }
 
 #Blogusername{
@@ -36,4 +40,17 @@
     flex-direction: row;
     margin-left: 15vw;
     margin-top: 1vw;
+
+
+    font-family: monospace;
+    font-style: normal;
+    font-weight: normal;
+
+    color: #CFCFCF;
+    width: fit-content;
+}
+
+#Blogusername:hover{
+    color: rgb(126, 126, 126);
+    cursor: pointer
 }
