@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Home from './components/Home'
 import Blogs from './components/Blogs'
+import Blog from './components/Blog'
 import AddBlog from './components/AddBlog'
 
 import LoginPage from './components/LoginPage'
@@ -39,6 +40,7 @@ function App() {
           <Route exact path="/logout" component={Logout} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/tempNav" component={TempNav} />
+          <Route exact path="/blogs/:id" component={Blog} />
 
         </Switch>
 

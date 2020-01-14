@@ -14,7 +14,7 @@ router.get('/', (req, res)=>{
 
 //get all blogs
 router.get('/api/blogs', (req, res)=>{
-    pool.query('select * from blogs', (error, result, fields)=>{
+    pool.query('select title, username, uKey, genre from blogs', (error, result, fields)=>{
         if(error)
             console.log(error);
         else{
@@ -28,6 +28,23 @@ router.get('/api/blogs/:id', (req, res)=>{
 
     
     pool.query('select * from blogs where genre = ?', [req.params.id], (error, result, fields)=>{
+        if(error)
+            console.log(error);
+        else{
+            res.send(result)
+        }
+    })
+})
+
+//get blogs by id
+router.get('/api/blogs/blog/:id', (req, res)=>{
+
+    
+    console.log(req.params.id)
+
+    console.log()
+
+    pool.query('select * from blogs where uKey = ?', [req.params.id], (error, result, fields)=>{
         if(error)
             console.log(error);
         else{

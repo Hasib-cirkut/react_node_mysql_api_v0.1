@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {DropdownButton, Dropdown, Card} from 'react-bootstrap'
 import Navbar from './NavBar'
+import {Link} from 'react-router-dom'
 import './css/blogs.css'
 
 const Blogs = () => {
@@ -61,6 +62,7 @@ const Blogs = () => {
                                 <Card.Subtitle className="mb-2 text-muted">by {item.username}</Card.Subtitle><br />
 
                                 <Card.Subtitle ><span style={{color: "#45c8fb"}}>{item.genre}</span></Card.Subtitle>
+                                <Card.Subtitle ><Link to={`blogs/${item.uKey}`}> Read More </Link></Card.Subtitle>
                             </Card.Body>
                         </Card>
                     </div>
