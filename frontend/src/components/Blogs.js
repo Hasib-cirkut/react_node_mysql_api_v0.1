@@ -55,17 +55,20 @@ const Blogs = () => {
             <div className="blog-container">
             {
                 blogs.map(item => (
-                    <div id="blog-item" key={item.uKey}>
-                        <Card className="text-center">
-                            <Card.Body>
-                                <Card.Title>{item.title}</Card.Title>
-                                <Card.Subtitle className="mb-2 text-muted">by {item.username}</Card.Subtitle><br />
+                    <Link to={`blogs/${item.uKey}`} id="Blogs-Item-Link">
+                        <div id="blog-item" key={item.uKey}>
+                            <Card className="text-center">
+                                <Card.Body>
+                                    <Card.Title>{item.title}</Card.Title>
+                                    <Card.Subtitle className="mb-2 text-muted">by {item.username}</Card.Subtitle><br />
 
-                                <Card.Subtitle ><span style={{color: "#45c8fb"}}>{item.genre}</span></Card.Subtitle>
-                                <Card.Subtitle ><Link to={`blogs/${item.uKey}`}> Read More </Link></Card.Subtitle>
-                            </Card.Body>
-                        </Card>
-                    </div>
+                                    <Card.Subtitle ><span style={{color: "#45c8fb"}}>{item.genre}</span></Card.Subtitle>
+                                    <Card.Subtitle ></Card.Subtitle>
+                                </Card.Body>
+                            </Card>
+                        </div>
+                    </Link>
+                    
                 ))
             }
             </div>

@@ -8,7 +8,7 @@ import './css/home.css'
 
 const Home = () => {
     return (
-        <div>
+        <div id="HomeMain">
             <Navbar />
             <Jumbotron id="jumbotron">
                 <h1>Hello, Blogs!</h1>

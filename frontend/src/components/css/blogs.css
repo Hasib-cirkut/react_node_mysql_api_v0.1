@@ -12,3 +12,11 @@
 #dropdown-basic-button{
     color: black
 }
+
+#Blogs-Item-Link{
+    text-decoration: none;
+}
+
+#blog-item:hover{
+    background-color: aquamarine
+}
