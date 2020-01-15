@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Navbar from './NavBar'
 import { Nav } from 'react-bootstrap';
-
+import {Link} from 'react-router-dom'
 import './css/blog.css'
 
 
@@ -33,7 +33,7 @@ const Blog =  ({match}) => {
 
             <div id="Blogtitle"><h1>{body.title}</h1></div>
 
-            <div id="Blogusername"><h3>{body.username}</h3></div>
+            <Link to={`/user/${body.username}`}><div id="Blogusername"><h3>{body.username}</h3></div></Link>
 
                 <div id="main-content">
                     {body.body}

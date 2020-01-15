@@ -7,6 +7,7 @@ import AddBlog from './components/AddBlog'
 
 import LoginPage from './components/LoginPage'
 import Logout from './components/Logout'
+import User from './components/User'
 
 
 
@@ -41,6 +42,7 @@ function App() {
           <Route exact path="/register" component={Register} />
           <Route exact path="/tempNav" component={TempNav} />
           <Route exact path="/blogs/:id" component={Blog} />
+          <Route exact path="/user/:id" component={User} />
 
         </Switch>
 
