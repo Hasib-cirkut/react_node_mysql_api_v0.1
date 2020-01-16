@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 
 import Navbar from './NavBar'
 
+import {Link} from 'react-router-dom'
+
 import './css/user.css'
 
 const User = ({ match }) =>{
@@ -61,12 +63,13 @@ const User = ({ match }) =>{
                 {
                     blogs.map(blog =>{
                         return(
-                            <div key={blog.uKey} id="UserBlog">
-                                <h4>{blog.title}</h4>
-                                <h5>{blog.genre}</h5>
-                                
-                                <p>{blog.body.substring(0, 40)}...</p>
-                            </div>
+                            <Link to={`/blogs/${blog.uKey}`} style={{textDecoration: "none"}}>
+                                <div key={blog.uKey} id="UserBlog">
+                                    <h4>{blog.title}</h4>
+                                    <h5>{blog.genre}</h5>
+                                    <p>{blog.body.substring(0, 40)}...</p>
+                                </div>
+                            </Link>
                         )
                     })
                 }
