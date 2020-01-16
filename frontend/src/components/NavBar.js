@@ -38,11 +38,9 @@ const NavBar = () => {
                         {loggedin === false &&
                         <Nav.Link href="/login">Login</Nav.Link>
                         }
+
+                        <Nav.Link href={`/user/${localStorage.user}`} className="mr-sm-2">profile</Nav.Link>
                     </Nav>
-                    <Form inline>
-                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                    <Button variant="outline-success">Search</Button>
-                    </Form>
                 </Navbar.Collapse>
             </Navbar>
         </div>
