@@ -16,7 +16,7 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content:space-between;
-    padding: 5vw 15vw 5vw 15vw;
+    padding: 5vw 20vw 5vw 15vw;
     font-family: Roboto;
     text-align: center;
 
@@ -53,5 +53,13 @@
 #Blogusername:hover{
     color: rgb(126, 126, 126);
     cursor: pointer
+}
+
+#BlogLovesText{
+    width: 10vw;
+    height: 27vh;
+    position: fixed;
+    z-index: 1000;
+    top: 45vh;
 }
 

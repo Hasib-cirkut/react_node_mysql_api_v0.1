@@ -39,10 +39,6 @@ router.get('/api/blogs/:id', (req, res)=>{
 //get blogs by uKey
 router.get('/api/blogs/blog/:id', (req, res)=>{
 
-    
-    console.log(req.params.id)
-
-    console.log()
 
     pool.query('select * from blogs where uKey = ?', [req.params.id], (error, result, fields)=>{
         if(error)
