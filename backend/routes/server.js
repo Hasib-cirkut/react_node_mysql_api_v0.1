@@ -181,7 +181,37 @@ router.get('/api/users/loves/:id/:id2', (req, res)=>{
 
 })
 
+//Update loves of users
+router.get('/api/users/updateloves/:id/:id2', (req, res)=>{
+    let username = req.params.id
+    let blog_id = req.params.id2
 
+    pool.query('insert into loves values(?, ?)', [username, blog_id], (error, result)=>{
+        if(error){
+            console.error(error)
+        }else{
+            res.send({
+                response: 'loves table updated'
+            })
+        }
+    })
+})
+
+
+router.get('/api/users/deleteloves/:id/:id2', (req, res)=>{
+    let username = req.params.id
+    let blog_id = req.params.id2
+
+    pool.query('DELETE FROM loves WHERE username = ? and blog_id = ?', [username, blog_id], (error, result)=>{
+        if(error){
+            console.error(error)
+        }else{
+            res.send({
+                response: 'loves table updated'
+            })
+        }
+    })
+})
 
 
 module.exports = router

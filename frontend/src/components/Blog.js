@@ -40,12 +40,20 @@ const Blog =  ({match}) => {
 
         event.preventDefault()
 
-        setLoved(!loved)
-
         if(loved === false){
 
-            
+            let result = await fetch(`http://localhost:5000/api/users/updateloves/${localStorage.user}/${id}`)
 
+            result = await result.json()
+
+            setLoved(!loved)
+
+        }else{
+            let result = await fetch(`http://localhost:5000/api/users/deleteloves/${localStorage.user}/${id}`)
+
+            result = await result.json()
+
+            setLoved(!loved)
         }
 
     }
