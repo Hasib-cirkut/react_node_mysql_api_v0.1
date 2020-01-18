@@ -2,12 +2,14 @@ import React, {useEffect, useState} from 'react';
 import Navbar from './NavBar'
 import {Link} from 'react-router-dom'
 import './css/blog.css'
+import { func } from 'prop-types';
 
 
 const Blog =  ({match}) => {
     const {id} = match.params
 
     const [body, setBody] = useState({})
+    const [loveCount, setLoveCount] = useState(0)
     const [loved, setLoved] = useState(false)
 
     useEffect(() => {
@@ -28,13 +30,25 @@ const Blog =  ({match}) => {
                 }else{
                     setLoved(true);
                 }
-            
+            }
+
+            async function getBlogLoves(){
+                let loveCount = await fetch(`http://localhost:5000/api/blogs/countLoves/${id}`)
+
+                loveCount = await loveCount.json()
+
+                setLoveCount(loveCount[0].loveCount)
             }
 
             
+
+            
             fetchData();
+            getBlogLoves();
 
     }, []);
+
+
 
     const blogLoveClick = async (event) =>{
 
@@ -48,12 +62,27 @@ const Blog =  ({match}) => {
 
             setLoved(!loved)
 
+            let loveCount = await fetch(`http://localhost:5000/api/blogs/countLoves/${id}`)
+
+                loveCount = await loveCount.json()
+
+                setLoveCount(loveCount[0].loveCount)
+
+            
+
         }else{
             let result = await fetch(`http://localhost:5000/api/users/deleteloves/${localStorage.user}/${id}`)
 
             result = await result.json()
 
             setLoved(!loved)
+
+            let loveCount = await fetch(`http://localhost:5000/api/blogs/countLoves/${id}`)
+
+                loveCount = await loveCount.json()
+
+                setLoveCount(loveCount[0].loveCount)
+
         }
 
     }
@@ -90,7 +119,7 @@ const Blog =  ({match}) => {
                 </div>
 
                 <div id="BlogLovesText">
-                    <h3>{body.loves}</h3> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"/></svg>
+                    <h3>{loveCount}</h3> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"/></svg>
                 </div>
 
             </div>

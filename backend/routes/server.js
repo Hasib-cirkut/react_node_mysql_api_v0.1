@@ -214,4 +214,17 @@ router.get('/api/users/deleteloves/:id/:id2', (req, res)=>{
 })
 
 
+router.get('/api/blogs/countLoves/:id', (req, res)=>{ 
+
+    let blog_id = req.params.id
+
+    pool.query('select count(blog_id) as loveCount FROM loves WHERE blog_id = ?', [blog_id], (error, result)=>{
+        if(error){
+            console.error(error)
+        }else{
+            res.send(result)
+        }
+    })
+})
+
 module.exports = router
