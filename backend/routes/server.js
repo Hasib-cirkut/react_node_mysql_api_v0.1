@@ -12,6 +12,7 @@ router.get('/', (req, res)=>{
 })
 
 
+
 //get all blogs
 router.get('/api/blogs', (req, res)=>{
     pool.query('select title, username, uKey, genre from blogs', (error, result, fields)=>{
@@ -164,6 +165,22 @@ router.post('/api/users/password', (req, res)=>{
         }
     })
 })
+
+
+// get loves of user 
+router.get('/api/users/loves/:id/:id2', (req, res)=>{
+
+    let username = req.params.id
+    let blog_id = req.params.id2
+
+    pool.query(`select * from loves where username = ? and blog_id = ?`, [username, blog_id], (error, result)=>{
+
+        
+        res.send(result)
+    })
+
+})
+
 
 
 
